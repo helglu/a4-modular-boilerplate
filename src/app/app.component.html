@@ -1,0 +1,31 @@
+<common-messages-component></common-messages-component>
+<common-loader-basic></common-loader-basic>
+<nav class="col-sm-12">
+      <span>
+        <a [routerLink]=" ['./'] ">
+          Index
+        </a>
+      </span>
+  |
+      <span>
+        <a [routerLink]=" ['./home'] ">
+          Home
+        </a>
+      </span>
+  |
+      <span>
+        <a [routerLink]=" ['./demo'] ">
+          Demo
+        </a>
+      </span>
+  |
+      <span>
+        <a [routerLink]=" ['./questions/screens'] ">
+          Qaa manager
+        </a>
+      </span>
+</nav>
+
+<main class="col-sm-12">
+  <router-outlet></router-outlet>
+</main>
