@@ -1,6 +1,3 @@
-/**
- * Angular 2
- */
 import {
   enableDebugTools,
   disableDebugTools
@@ -9,10 +6,16 @@ import {
   ApplicationRef,
   enableProdMode
 } from '@angular/core';
+
+import {A_PROVIDERS} from './settings.providers/a.providers'
+import {B_PROVIDERS} from './settings.providers/b.providers'
+import {COMMON_PROVIDERS} from './settings.providers/common.providers'
+
+
 /**
  * Environment Providers
  */
-let PROVIDERS: any[] = [
+let PROVIDERS:any[] = [
   /**
    * Common env directives
    */
@@ -22,15 +25,17 @@ let PROVIDERS: any[] = [
  * Angular debug tools in the dev console
  * https://github.com/angular/angular/blob/86405345b781a9dc2438c0fbe3e9409245647019/TOOLS_JS.md
  */
-let _decorateModuleRef = <T>(value: T): T => { return value; };
+let _decorateModuleRef = <T>(value:T):T => {
+  return value;
+};
 
-if ('production' === ENV) {
+
+if ('production-a' === ENV) { //TODO finish
+  console.log("a production settings applied");
   enableProdMode();
 
-  /**
-   * Production
-   */
-  _decorateModuleRef = (modRef: any) => {
+  // Production
+  _decorateModuleRef = (modRef:any) => {
     disableDebugTools();
 
     return modRef;
@@ -38,32 +43,54 @@ if ('production' === ENV) {
 
   PROVIDERS = [
     ...PROVIDERS,
-    /**
-     * Custom providers in production.
-     */
+    ...A_PROVIDERS,
+    ...COMMON_PROVIDERS
+    // custom providers in production
   ];
 
-} else {
+} else if ('production-b' === ENV) { //TODO check
+  console.log("b production settings applied");
 
-  _decorateModuleRef = (modRef: any) => {
-    const appRef = modRef.injector.get(ApplicationRef);
-    const cmpRef = appRef.components[0];
+  enableProdMode();
 
-    enableDebugTools(cmpRef);
+  // Production
+  _decorateModuleRef = (modRef:any) => {
+    disableDebugTools();
+
     return modRef;
   };
 
-  /**
-   * Development
-   */
   PROVIDERS = [
     ...PROVIDERS,
-    /**
-     * Custom providers in development.
-     */
+    ...B_PROVIDERS,
+    ...COMMON_PROVIDERS
+    // custom providers in production
+  ];
+
+} else {
+  console.log('development setings applied');
+  _decorateModuleRef = (modRef:any) => {
+    const appRef = modRef.injector.get(ApplicationRef);
+    const cmpRef = appRef.components[0];
+
+    let _ng = (<any> window).ng;
+    enableDebugTools(cmpRef);
+    (<any> window).ng.probe = _ng.probe;
+    (<any> window).ng.coreTokens = _ng.coreTokens;
+    return modRef;
+  };
+
+  // Development - all global services for all modules should be present here!!
+  PROVIDERS = [
+    ...PROVIDERS,
+    ...A_PROVIDERS,
+    ...B_PROVIDERS,
+    ...COMMON_PROVIDERS
+    // custom providers in development
   ];
 
 }
+
 
 export const decorateModuleRef = _decorateModuleRef;
 

@@ -1,0 +1,12 @@
+<div class="message-component" *ngIf="messagesService.alerts.length> 0">
+  <div *ngFor="let alert of messagesService.alerts"
+       class="alert alert-{{alert.type}}">
+    <button
+      *ngIf="alert.dismissible"
+      (click)="messagesService.closeAlert(alert.id)"
+      type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ alert.message }}
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "roles": {
+    "admin": [],
+    "af": [
+      "officer",
+      "officer-leader"
+    ],
+    "all": [
+      "common-all"
+    ],
+    "ce": [
+      "expert",
+      "expert-advance",
+      "expert-leader"
+    ],
+    "op": [
+      "operator",
+      "operator-leader"
+    ],
+    "history": [
+      "common-history"
+    ],
+    "menu": [
+      "menu-info"
+    ]
+  },
+  "appACookies": {
+    "appAAuthCookie": "APP_A_AUTH"
+  }
+}

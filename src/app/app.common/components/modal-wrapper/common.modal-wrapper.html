@@ -1,0 +1,23 @@
+<div>
+  <div class="overlay"
+       (click)="closeDialog()"
+       [ngClass]="{ overlShow: showModal, overlHide: !showModal }">
+  </div>
+
+  <section class="luma-modal" *ngIf="showModal">
+
+    <header>
+      {{ modalTitle | translate }}
+    </header>
+
+    <article class="content">
+      <ng-content></ng-content>
+    </article>
+
+    <a class="c-fancybox-close pull-right glyphicon glyphicon-remove"
+       (click)="closeDialog()"
+       title="{{ close | translate }}">
+    </a>
+
+  </section>
+</div>

@@ -1,0 +1,21 @@
+{
+  "alerts": {
+    "dismissOnTimeout": 30000
+  },
+  "logout": {
+    "timer": 600000
+  },
+  "delay": {
+    "timer": 3000
+  },
+  "apiBaseUrls": {
+    "questionsUrl": "http://localhost:3001/"
+  },
+  "defaultHeaders": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  }
+}
+
+
+

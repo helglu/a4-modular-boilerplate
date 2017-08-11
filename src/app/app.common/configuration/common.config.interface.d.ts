@@ -1,0 +1,26 @@
+interface Alerts {
+  dismissOnTimeout:number;
+}
+interface Delay {
+  timer:number;
+}
+
+interface ApiBaseUrls {
+  questionsUrl:string;
+}
+
+interface Logout {
+  timer:number
+}
+
+interface DefaultHeaders{
+  'Content-type':string
+}
+
+export interface CommonConfigInterface {
+  alerts:Alerts;
+  logout:Logout;
+  delay:Delay;
+  apiBaseUrls:ApiBaseUrls;
+  defaultHeaders:DefaultHeaders;
+}

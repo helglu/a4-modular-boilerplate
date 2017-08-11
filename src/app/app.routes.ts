@@ -1,15 +1,38 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
+import { Routes, RouterModule } from '@angular/router';
 
-import { DataResolver } from './app.resolver';
+//module routes
+import { A_ROUTES } from "./settings.routes/a.routes"
+import { B_ROUTES } from "./settings.routes/b.routes"
+import { DEMO_ROUTES } from "./settings.routes/demo.routes"
+import { NoContentComponent } from "./app.common/components/no.content/common.no-content.component";
 
-export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: 'home',  component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'detail', loadChildren: './+detail#DetailModule'},
-  { path: 'barrel', loadChildren: './+barrel#BarrelModule'},
-  { path: '**',    component: NoContentComponent },
-];
+export const ROUTES: Routes = generatePaths();
+
+function generatePaths() {
+  let env = process.env.ENV;
+  let NO_CONTENT_PATH = [
+    { path: '**', component: NoContentComponent }
+  ];
+
+  if (env === 'development') {
+    return [ //all routes accessible for development
+      ...A_ROUTES,
+      ...B_ROUTES,
+      ...DEMO_ROUTES,
+      ...NO_CONTENT_PATH
+    ];
+  } else if (env === 'production-a') {
+    return [
+      { path: '', redirectTo: '/a-home', pathMatch: 'full' },
+      ...A_ROUTES,
+      ...NO_CONTENT_PATH
+    ]
+  } else if (env === 'production-b') {
+    return [
+      { path: '', redirectTo: '/b-home', pathMatch: 'full' },
+      ...B_ROUTES,
+      ...NO_CONTENT_PATH
+    ]
+  }
+}
+

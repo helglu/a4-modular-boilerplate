@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule, Http} from '@angular/http';
 import {
   NgModule,
   ApplicationRef
@@ -20,17 +20,25 @@ import {
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
-// App is our top level component
+
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
+
+import {TranslateModule} from 'ng2-translate';
+import {TranslateLoader} from 'ng2-translate';
+import {TranslateStaticLoader} from 'ng2-translate';
+
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+
+import { B_DECLARATIONS } from './settings.declarations/b.declarations'
+import { A_DECLARATIONS } from './settings.declarations/a.declarations'
+import { COMMON_DECLARATIONS } from './settings.declarations/common.declarations'
+import { DEMO_DECLARATIONS } from "./settings.declarations/demo.declarations";
+
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -44,6 +52,11 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
+var appBaseUrl = '';
+if (process.env.BASE_URL) {
+  appBaseUrl = process.env.BASE_URL;
+}
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -51,10 +64,10 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
-    NoContentComponent,
-    XLargeDirective
+    ...B_DECLARATIONS,
+    ...A_DECLARATIONS,
+    ...COMMON_DECLARATIONS,
+    ...DEMO_DECLARATIONS
   ],
   /**
    * Import Angular's modules.
@@ -63,7 +76,12 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (http: Http) => new TranslateStaticLoader(http, appBaseUrl + '/assets/i18n', '.json'),
+      deps: [Http]
+    })
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

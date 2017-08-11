@@ -1,0 +1,31 @@
+{
+  "roles": {
+    "admin": [
+    ],
+    "af": [
+      "fraud-officer",
+      "fraud-officer-leader"
+    ],
+    "all": [
+      "common-all"
+    ],
+    "ce": [
+      "credit-expert",
+      "credit-expert-advance",
+      "credit-expert-leader"
+    ],
+    "op": [
+      "operations-operator",
+      "operations-operator-leader"
+    ],
+    "history": [
+      "common-history"
+    ],
+    "menu": [
+      "menu-info"
+    ]
+  },
+  "appCookies": {
+    "appAuthCookie": "APP_B_AUTH"
+  }
+}
