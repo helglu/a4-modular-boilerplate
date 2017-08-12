@@ -13,7 +13,7 @@ interface AppCookies {
 }
 
 
-export interface AConfigInterface {
+interface AConfigInterface {
   roles:Roles;
   appACookies: AppCookies;
 }

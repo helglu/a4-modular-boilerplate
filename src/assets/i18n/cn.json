@@ -1,0 +1,23 @@
+{
+  "app": {
+    "test": "测试",
+  },
+  "login": {
+    "log_in": "登　录",
+    "username": "用户名",
+    "username_placeholder": "用户名",
+    "username_required": "用户名不能为空",
+    "password": "密码",
+    "password_required": "密码不能为空",
+    "password_placeholder": "密码",
+    "unauthorized": "Your password or login is incorrect."
+  },
+  "modal": {
+    "title":{
+      "crossButton": "Close"
+    }
+  },
+  "rest": {
+    "error_response": "系统出错"
+  }
+}

@@ -3,9 +3,9 @@ import {
   OnInit
 } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {AppTranslateService} from "../app.common/services/translation.service";
-import {MessagesService} from "../app.common/components/messages/messages.service";
-import {RestService} from "../app.common/services/rest.service";
+import {AppTranslateService} from "../../../app.common/services/translation.service";
+import {MessagesService} from "../../../app.common/components/messages/messages.service";
+import {RestService} from "../../../app.common/services/rest.service";
 
 @Component({
   selector: 'demo',

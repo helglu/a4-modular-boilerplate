@@ -13,7 +13,7 @@ interface AppCookies {
 }
 
 
-export interface BConfigInterface {
+interface BConfigInterface {
   roles:Roles;
   appCookies: AppCookies;
 }

@@ -1,0 +1,34 @@
+{
+  "app": {
+    "test": "Testing string"
+  },
+  "login": {
+    "log_in": "Log in",
+    "username": "Username",
+    "username_placeholder": "Username",
+    "username_required": "Username is required",
+    "password": "Password",
+    "password_required": "Password is required",
+    "password_placeholder": "Password",
+    "unauthorized": "Your password or login is incorrect."
+  },
+  "modal": {
+    "title":{
+      "crossButton": "Close"
+    }
+  },
+  "errors": {
+    "unauthorized": "Username or password is wrong, please re-enter.",
+    "http": {
+      "304": "Error - source was not modified.",
+      "401": "Your session is already expired, please log in again.",
+      "504": "Connection timed out.",
+      "error_response": "Connection error, error code: ",
+      "connection_error": "Connection error."
+    }
+  },
+  "forms": {
+    "required":"This value is required!",
+    "not_number":"Value is not a number!"
+  }
+}

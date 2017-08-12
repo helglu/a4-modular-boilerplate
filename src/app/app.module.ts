@@ -36,7 +36,7 @@ import '../styles/headings.css';
 import { B_DECLARATIONS } from './settings.declarations/b.declarations'
 import { A_DECLARATIONS } from './settings.declarations/a.declarations'
 import { COMMON_DECLARATIONS } from './settings.declarations/common.declarations'
-import { DEMO_DECLARATIONS } from "./settings.declarations/demo.declarations";
+import {DEV_DECLARATIONS} from "./settings.declarations/dev.declarations";
 
 
 
@@ -67,7 +67,7 @@ if (process.env.BASE_URL) {
     ...B_DECLARATIONS,
     ...A_DECLARATIONS,
     ...COMMON_DECLARATIONS,
-    ...DEMO_DECLARATIONS
+    ...DEV_DECLARATIONS
   ],
   /**
    * Import Angular's modules.

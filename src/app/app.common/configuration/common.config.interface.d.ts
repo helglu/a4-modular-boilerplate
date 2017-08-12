@@ -17,7 +17,7 @@ interface DefaultHeaders{
   'Content-type':string
 }
 
-export interface CommonConfigInterface {
+interface CommonConfigInterface {
   alerts:Alerts;
   logout:Logout;
   delay:Delay;

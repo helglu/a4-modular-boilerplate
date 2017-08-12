@@ -1,7 +1,6 @@
 import {Injectable, Output, EventEmitter} from '@angular/core';
 import {TranslateService} from 'ng2-translate/ng2-translate';
 import {CommonConfigService} from "../../services/config.service";
-import {MessageParams} from "./messages.d.ts";
 
 var _ = require('lodash');
 

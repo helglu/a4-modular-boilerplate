@@ -1,9 +1,5 @@
 import {Injectable} from '@angular/core';
 
-import {CommonConfigInterface} from '../configuration/common.config.interface.d.ts'
-import {AConfigInterface} from "../../app.a/configuration/a.config.interface.d.ts";
-import {BConfigInterface} from "../../app.b/configuration/b.config.interface.d.ts";
-
 var lodash = require('lodash');
 
 if (process.env.ENV) {

@@ -1,4 +1,4 @@
-export interface MessageParams {
+interface MessageParams {
     id?: number;
     type: string;
     timeout?: number;

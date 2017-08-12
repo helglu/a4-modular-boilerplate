@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 //module routes
 import { A_ROUTES } from "./settings.routes/a.routes"
 import { B_ROUTES } from "./settings.routes/b.routes"
-import { DEMO_ROUTES } from "./settings.routes/demo.routes"
 import { NoContentComponent } from "./app.common/components/no.content/common.no-content.component";
+import {DEV_ROUTES} from "./settings.routes/dev.routes";
 
 export const ROUTES: Routes = generatePaths();
 
@@ -16,9 +16,10 @@ function generatePaths() {
 
   if (env === 'development') {
     return [ //all routes accessible for development
+      { path: '', redirectTo: '/dev-dashboard', pathMatch: 'full' },
+      ...DEV_ROUTES,
       ...A_ROUTES,
       ...B_ROUTES,
-      ...DEMO_ROUTES,
       ...NO_CONTENT_PATH
     ];
   } else if (env === 'production-a') {
