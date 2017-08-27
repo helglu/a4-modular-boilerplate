@@ -6,6 +6,9 @@ import {BAuthService} from "../../services/b.auth.service";
 })
 export class BLoginComponent {
 
+  private logInForm:any = {}
+
+
   constructor(
     public authService: BAuthService) {
   }

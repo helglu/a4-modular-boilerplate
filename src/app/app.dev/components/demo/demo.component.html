@@ -1,84 +1,84 @@
-<!--<h1 x-large class="sample-content">Demo</h1>-->
+<h1 x-large class="sample-content">Demo</h1>
 
-<!--<h2>Translations</h2>-->
-<!--<div>{{ "app.test" | translate }}</div>-->
-<!--<button class="btn btn-default"-->
-        <!--(click)="appTranslateService.changeToLang('en')">EN-->
-<!--</button>-->
-<!--<button class="btn btn-default"-->
-        <!--(click)="appTranslateService.changeToLang('cn')">CN-->
-<!--</button>-->
-
-
-<!--<h2>Alerts</h2>-->
-<!--<button class="btn btn-default"-->
-        <!--(click)="messagesService.addMessage({ message: 'Hi I am default box without param.'})">Default-->
-<!--</button>-->
-
-<!--<button class="btn btn-default"-->
-        <!--(click)="messagesService.addMessage({type: 'danger', message: 'Hi I am Danger.'})">Danger-->
-<!--</button>-->
-
-<!--<button class="btn btn-default"-->
-        <!--(click)="messagesService.addMessage({type: 'success', message: 'Hi I am Success.' })">Success-->
-<!--</button>-->
-
-<!--<button class="btn btn-default"-->
-        <!--(click)="messagesService.addMessage({type: 'warning', message: 'Hi I am Warning.'})">Warning-->
-<!--</button>-->
-
-<!--<button class="btn btn-default"-->
-        <!--(click)="messagesService.addMessage({type: 'info', message: 'Hi I am Info.'})">Info-->
-<!--</button>-->
+<h2>Translations</h2>
+<div>{{ "app.test" | translate }}</div>
+<button class="btn btn-default"
+        (click)="appTranslateService.changeToLang('en')">EN
+</button>
+<button class="btn btn-default"
+        (click)="appTranslateService.changeToLang('cn')">CN
+</button>
 
 
-<!--<h2>Modal window</h2>-->
+<h2>Alerts</h2>
+<button class="btn btn-default"
+        (click)="messagesService.addMessage({ message: 'Hi I am default box without param.'})">Default
+</button>
 
-<!--<common-modal-wrapper-->
-  <!--[modalTitle]="'settings.accounts.edit_email_title'"-->
-  <!--(closeClicked)="modalCloseCallback()"-->
-  <!--[showModal]="modalWrapperVisible">-->
+<button class="btn btn-default"
+        (click)="messagesService.addMessage({type: 'danger', message: 'Hi I am Danger.'})">Danger
+</button>
 
-  <!--<div>Here some content, could be HTML or another component.</div>-->
+<button class="btn btn-default"
+        (click)="messagesService.addMessage({type: 'success', message: 'Hi I am Success.' })">Success
+</button>
 
-  <!--<div>Demo variable value: {{demoVariable}}</div>-->
+<button class="btn btn-default"
+        (click)="messagesService.addMessage({type: 'warning', message: 'Hi I am Warning.'})">Warning
+</button>
 
-  <!--<button class="btn btn-default center-block"-->
-          <!--(click)="modalCloseCallback()">Close-->
-  <!--</button>-->
+<button class="btn btn-default"
+        (click)="messagesService.addMessage({type: 'info', message: 'Hi I am Info.'})">Info
+</button>
 
-<!--</common-modal-wrapper>-->
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="showModalWrapper()">Open modal wrapper-->
-<!--</button>-->
+<h2>Modal window</h2>
 
-<!--<h2>Rest calls</h2>-->
+<common-modal-wrapper
+  [modalTitle]="'settings.accounts.edit_email_title'"
+  (closeClicked)="modalCloseCallback()"
+  [showModal]="modalWrapperVisible">
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/err401')">response code 401 (error/err401)-->
-<!--</button>-->
+  <div>Here some content, could be HTML or another component.</div>
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/err404')">response code 404 (error/err404)-->
-<!--</button>-->
+  <div>Demo variable value: {{demoVariable}}</div>
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/err500')">response code 500 (error/err500)-->
-<!--</button>-->
+  <button class="btn btn-default center-block"
+          (click)="modalCloseCallback()">Close
+  </button>
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/malformedResponse')">malformed response(error/malformedResponse)-->
-<!--</button>-->
+</common-modal-wrapper>
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/emptyResponse')">empty response(error/emptyResponse)-->
-<!--</button>-->
+<button class="btn btn-default"
+        (click)="showModalWrapper()">Open modal wrapper
+</button>
 
-<!--<button class="btn btn-default"-->
-        <!--(click)="this.makeRestCall('error/garbageBody')">garbageBody response(error/garbageBody)-->
-<!--</button>-->
+<h2>Rest calls</h2>
 
-  <router-outlet></router-outlet>
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/err401')">response code 401 (error/err401)
+</button>
+
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/err404')">response code 404 (error/err404)
+</button>
+
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/err500')">response code 500 (error/err500)
+</button>
+
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/malformedResponse')">malformed response(error/malformedResponse)
+</button>
+
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/emptyResponse')">empty response(error/emptyResponse)
+</button>
+
+<button class="btn btn-default"
+        (click)="this.makeRestCall('error/garbageBody')">garbageBody response(error/garbageBody)
+</button>
+
+
 
 

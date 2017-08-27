@@ -1,2 +1,2 @@
 export * from './messages.service';
-export * from './messages';
+export * from './';

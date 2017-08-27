@@ -1,7 +1,7 @@
 {
-  "name": "angular-starter",
-  "version": "6.0.0",
-  "description": "An Angular Webpack Starter kit featuring Angular (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
+  "name": "angular-modular-starter",
+  "version": "0.0.1",
+  "description": "An Modular Angular Webpack Starter kit featuring Angular 4",
   "keywords": [
     "angular",
     "angular2",
@@ -9,8 +9,8 @@
     "webpack",
     "typescript"
   ],
-  "author": "Patrick Stapleton <patrick@angularclass.com>",
-  "homepage": "https://github.com/AngularClass/angular-starter",
+  "author": "Helena Binkova (based on AngularClass webpack-starter 6.0), https://github.com/AngularClass/angular-starter",
+  "homepage": "https://github.com/helglu/a4-modular-boilerplate",
   "license": "MIT",
   "scripts": {
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && cross-env BUILD_AOT=1 npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
@@ -18,6 +18,8 @@
     "build:dev": "npm run clean:dist && npm run webpack -- --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
     "build:prod": "npm run clean:dist && npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
+    "build:production-a": "npm run clean:dist && npm run webpack -- --config config/webpack.prod-a.js  --progress --profile --bail",
+    "build:production-b": "npm run clean:dist && npm run webpack -- --config config/webpack.prod-b.js  --progress --profile --bail",
     "build": "npm run build:dev",
     "ci:aot": "npm run lint && npm run test && npm run build:aot && npm run e2e",
     "ci:jit": "npm run lint && npm run test && npm run build:prod && npm run e2e",
@@ -157,10 +159,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AngularClass/angular-starter.git"
+    "url": "https://github.com/helglu/a4-modular-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/AngularClass/angular-starter/issues"
+    "url": "https://github.com/helglu/a4-modular-boilerplate.git/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
