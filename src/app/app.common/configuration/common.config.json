@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "dismissOnTimeout": 30000
+    "dismissOnTimeout": 3000
   },
   "logout": {
     "timer": 600000

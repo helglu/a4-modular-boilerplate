@@ -22,15 +22,14 @@ import { AppTranslateService } from "./app.common/services/translation.service";
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  public angularclassLogo = 'assets/img/msxf-logo.svg';
-  public name = 'Angular 2.4 Luma Front end core';
-  public url = 'https://www.msxf.com/';
+  public name = 'Angular 4 modular boilerplate';
+  public url = 'https://github.com/helglu/a4-modular-boilerplate';
 
   constructor(
     public appState: AppState,
     public translate: TranslateService,
     public appTranslateService: AppTranslateService) {
-    console.log('appComponent constructor launched: envrionment: ',process.env, process);
+    console.log('appComponent constructor launched: environment: ',process.env, process);
   }
 
   public ngOnInit() {
