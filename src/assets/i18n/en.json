@@ -4,12 +4,14 @@
   },
   "login": {
     "log_in": "Log in",
+    "register": "Register",
     "username": "Username",
     "username_placeholder": "Username",
     "username_required": "Username is required",
-    "username_minlength": "Username too short!",
+    "username_minlength": "Username is too short!",
     "password": "Password",
     "password_required": "Password is required",
+    "password_minlength": "Password is too short",
     "password_placeholder": "Password",
     "unauthorized": "Your password or login is incorrect."
   },

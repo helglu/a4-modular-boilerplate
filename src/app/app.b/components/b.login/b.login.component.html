@@ -1,56 +1,77 @@
-<div class="jumbotron col-sm-3 margin-s-top">
 
-  <h4>{{'login.log_in' | translate}}</h4>
 
-  <form #logInForm="ngForm">
-    <div class="row">
-      <div class="form-group col-sm-12"
-           [class.has-danger]="username.errors && username.touched">
-        <label>
-          {{ 'login.username' | translate }}
+<div class="card col-sm-4 margin-s-top">
+
+  <ul class="nav nav-tabs margin-s-top">
+    <li class="nav-item">
+      <a class="nav-link active">{{'login.log_in' | translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">{{'login.register' | translate}}</a>
+    </li>
+  </ul>
+
+  <div class="card-block">
+
+    <h3>App B</h3>
+
+    <form #logInForm="ngForm">
+      <div class="row">
+        <div class="form-group col-sm-12"
+             [class.has-danger]="username.errors && username.touched">
+          <label>
+            {{ 'login.username' | translate }}
+          </label>
           <input type="text"
-                 class="form-control inputEx"
+                 class="form-control form-group"
                  [(ngModel)]="form.username"
                  name="username"
                  #username="ngModel"
                  required
                  minlength="2"
                  placeholder="{{ 'login.username_placeholder' | translate }}">
-        </label>
-        <div [hidden]="!(username.errors && username.errors.required && username.touched)" class="alert alert-danger col-sm-12">
-          {{ 'login.username_required' | translate }}
+
+          <div [hidden]="!(username.errors && username.errors.required && username.touched)"
+               class="alert alert-danger col-sm-12">
+            {{ 'login.username_required' | translate }}
+          </div>
+          <div [hidden]="!(username.errors && username.errors.minlength && username.touched)"
+               class="alert alert-danger col-sm-12">
+            {{ 'login.username_minlength' | translate }}
+          </div>
         </div>
-        <div [hidden]="!(username.errors && username.errors.minlength && username.touched)" class="alert alert-danger col-sm-12">
-          {{ 'login.username_minlength' | translate }}
-        </div>
+
       </div>
 
-    </div>
 
+      <div class="form-group"
+           [class.has-danger]="password.touched && password.errors">
+        <label>
+          {{ 'login.password' | translate }}
+        </label>
 
-
-    <div class="form-group"
-         [class.has-danger]="password.touched && password.errors">
-      <label>
-        {{ 'login.password' | translate }}
         <input type="password"
-               class="form-control inputEx"
+               class="form-control form-group"
                [(ngModel)]="form.password"
                name="password"
                #password="ngModel"
                required
                minlength="2"
                placeholder="{{ 'login.password_placeholder' | translate }}">
-      </label>
-      <div [hidden]="!(password.errors && password.errors.required && password.touched)" class="alert alert-danger col-sm-12">
-        {{ 'login.username_required' | translate }}
+        <div [hidden]="!(password.errors && password.errors.required && password.touched)"
+             class="alert alert-danger col-sm-12">
+          {{ 'login.password_required' | translate }}
+        </div>
+        <div [hidden]="!(password.errors && password.errors.minlength && password.touched)"
+             class="alert alert-danger col-sm-12">
+          {{ 'login.password_minlength' | translate }}
+        </div>
       </div>
-      <div [hidden]="!(password.errors && password.errors.minlength && password.touched)" class="alert alert-danger col-sm-12">
-        {{ 'login.username_minlength' | translate }}
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled]="logInForm.errors" (click)="login(logInForm)">
-      {{'login.log_in' | translate}}
-    </button>
-  </form>
+      <button type="submit" class="btn btn-primary"
+              [disabled]="username.errors || password.errors"
+              (click)="login(logInForm)">
+        {{'login.log_in' | translate}}
+      </button>
+    </form>
+  </div>
 </div>
