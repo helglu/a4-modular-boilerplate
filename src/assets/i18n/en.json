@@ -1,6 +1,8 @@
 {
   "app": {
-    "test": "Testing string"
+    "test": "Testing string",
+    "app_a": "Application A",
+    "app_b": "Application B"
   },
   "login": {
     "log_in": "Log in",

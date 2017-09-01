@@ -7,11 +7,11 @@
   <section class="basic-modal" *ngIf="showModal">
 
     <header>
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-10">
           {{ modalTitle | translate }}
         </div>
-        <div class="col-2 text-center">
+        <div class="col-2">
           <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -22,8 +22,6 @@
     <article class="content">
       <ng-content></ng-content>
     </article>
-
-
 
   </section>
 </div>
