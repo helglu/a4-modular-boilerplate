@@ -25,7 +25,7 @@ export class RestService {
               private translateService:TranslateService) {
   }
 
-  private withCredentials: boolean = true;
+  private withCredentials: boolean = false;
 
 
   public post(url:string, body:any, options = {}, showLoader = true) {

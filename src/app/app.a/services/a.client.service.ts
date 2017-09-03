@@ -4,25 +4,23 @@
 
 import {Injectable} from "@angular/core";
 import {RestService} from "../../app.common/services/rest.service";
+import {CommonConfigService} from "../../app.common/services/config.service";
 
 
 @Injectable()
 export class  AClientService {
 
-  constructor(private restService: RestService) {
+  constructor(private restService: RestService, 
+              private commonConfigService: CommonConfigService) {
 
   }
 
-  private dataPrefix:string = '/camunda/api/engine/engine/default/';
+  private baseUrl = this.commonConfigService.commonValues.apiBaseUrls.baseUrl;
 
-  public login(urlParams: string) {
-    return this.restService.post('/camunda/api/admin/auth/user/default/login/tasklist',urlParams,{'Content-Type':'application/x-www-form-urlencoded'})
+
+  public hello() {
+    return this.restService.get( this.baseUrl+'/hello');
   }
-
-  public getGroupRoles(userId:string) {
-    return this.restService.get('/engine-rest/group?member='+userId,{});
-  }
-
 
 
 

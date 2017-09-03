@@ -1,4 +1,4 @@
-import {TranslateService, TranslatePipe, LangChangeEvent} from 'ng2-translate/ng2-translate';
+import {TranslateService} from 'ng2-translate/ng2-translate';
 import {Injectable,  Output, EventEmitter} from '@angular/core';
 import {Http} from "@angular/http";
 

@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {AppTranslateService} from "../../../app.common/services/translation.service";
 import {MessagesService} from "../../../app.common/components/messages/messages.service";
 import {RestService} from "../../../app.common/services/rest.service";
+import {AClientService} from "../../../app.a/services/a.client.service";
 
 @Component({
   selector: 'demo',
@@ -21,7 +22,7 @@ export class DemoComponent implements OnInit {
   constructor(public route:ActivatedRoute,
               public appTranslateService:AppTranslateService,
               public messagesService:MessagesService,
-              public restService:RestService) {
+              public restService:RestService, public aClientService: AClientService) {
   }
 
   public ngOnInit() {
@@ -46,18 +47,12 @@ export class DemoComponent implements OnInit {
     this.modalWrapperVisible = true;
   }
 
-  private makeRestCall(endpoint:string) {
-    this.restService
-      .get(endpoint, [])
-      .subscribe(
-        (response) => {
-          console.log(response)
-        },
-        (err) => {
-          console.log(err)
-        }
-      );
-
+  private makeRestCall() {
+    this.aClientService.hello().
+    subscribe(
+      (data)=>{
+        this.messagesService.addMessage({type: 'info', message: data.msg})
+      });
   }
 
 

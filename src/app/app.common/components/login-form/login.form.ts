@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
-import {LoginFormObject} from "./login.form.object.d.ts";
 @Component({
   selector: 'login-form',
   templateUrl: '/login.form.html'

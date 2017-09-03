@@ -3,14 +3,15 @@
  */
 
 import { Component } from '@angular/core';
+import {AAuthService} from "../../services/a.auth.service";
 
 @Component({
   selector: 'a-home',
-  template: '<h3>Application A Home</h3>'
+  templateUrl: './a.home.html'
 })
 export class AHomeComponent {
 
-  constructor() {}
+  constructor(private authService: AAuthService) {}
 
   ngOnInit() {
     console.log("AHomeComponent: Application A home component initialized");

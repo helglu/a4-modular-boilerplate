@@ -17,7 +17,6 @@
     "build:aot": "npm run build:aot:prod",
     "build:dev": "npm run clean:dist && npm run webpack -- --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
-    "build:prod": "npm run clean:dist && npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
     "build:production-a": "npm run clean:dist && npm run webpack -- --config config/webpack.prod-a.js  --progress --profile --bail",
     "build:production-b": "npm run clean:dist && npm run webpack -- --config config/webpack.prod-b.js  --progress --profile --bail",
     "build": "npm run build:dev",

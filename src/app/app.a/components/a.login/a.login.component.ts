@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {AAuthService} from "../../services/a.auth.service";
-import {LoginFormObject} from "../../../app.common/components/login-form/login.form.object.d.ts";
 
 @Component({
   template: require('./a.login.component.html'),

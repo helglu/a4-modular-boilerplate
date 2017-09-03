@@ -9,7 +9,7 @@
     "timer": 3000
   },
   "apiBaseUrls": {
-    "questionsUrl": "http://localhost:3001/"
+    "baseUrl": "http://demo5760845.mockable.io/"
   },
   "defaultHeaders": {
     "Content-Type": "application/json",

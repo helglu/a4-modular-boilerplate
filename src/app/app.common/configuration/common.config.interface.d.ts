@@ -6,7 +6,7 @@ interface Delay {
 }
 
 interface ApiBaseUrls {
-  questionsUrl:string;
+  baseUrl:string;
 }
 
 interface Logout {

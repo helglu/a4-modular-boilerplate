@@ -1,4 +1,4 @@
-export interface LoginFormObject {
+interface LoginFormObject {
   name:string,
   password:string
 }
