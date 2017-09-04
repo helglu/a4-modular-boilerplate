@@ -3,8 +3,8 @@
  */
 
 import {Injectable} from "@angular/core";
-import {RestService} from "../../app.common/services/rest.service";
-import {CommonConfigService} from "../../app.common/services/config.service";
+import {RestService} from "../../module.common/services/rest.service";
+import {CommonConfigService} from "../../module.common/services/config.service";
 
 
 @Injectable()

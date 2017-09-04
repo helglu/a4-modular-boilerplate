@@ -3,10 +3,10 @@ import {
   OnInit
 } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {AppTranslateService} from "../../../app.common/services/translation.service";
-import {MessagesService} from "../../../app.common/components/messages/messages.service";
-import {RestService} from "../../../app.common/services/rest.service";
 import {AClientService} from "../../../app.a/services/a.client.service";
+import {AppTranslateService} from "../../../module.common/services/translation.service";
+import {MessagesService} from "../../../module.common/components/messages/messages.service";
+import {RestService} from "../../../module.common/services/rest.service";
 
 @Component({
   selector: 'demo',
@@ -22,7 +22,8 @@ export class DemoComponent implements OnInit {
   constructor(public route:ActivatedRoute,
               public appTranslateService:AppTranslateService,
               public messagesService:MessagesService,
-              public restService:RestService, public aClientService: AClientService) {
+              public restService:RestService, 
+              public aClientService: AClientService) {
   }
 
   public ngOnInit() {

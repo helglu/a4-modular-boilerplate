@@ -23,6 +23,7 @@ export class RestService {
               private messagesService:MessagesService,
               private loaderService:LoaderService,
               private translateService:TranslateService) {
+    console.log('rest service initialised');
   }
 
   private withCredentials: boolean = false;

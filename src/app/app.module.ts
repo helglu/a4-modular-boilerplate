@@ -35,8 +35,8 @@ import '../styles/headings.css';
 
 import { B_DECLARATIONS } from './settings.declarations/b.declarations'
 import { A_DECLARATIONS } from './settings.declarations/a.declarations'
-import { COMMON_DECLARATIONS } from './settings.declarations/common.declarations'
 import {DEV_DECLARATIONS} from "./settings.declarations/dev.declarations";
+import {AppCommonModule} from "./module.common/common.module";
 
 
 
@@ -66,7 +66,7 @@ if (process.env.BASE_URL) {
     AppComponent,
     ...B_DECLARATIONS,
     ...A_DECLARATIONS,
-    ...COMMON_DECLARATIONS,
+    // ...COMMON_DECLARATIONS,
     ...DEV_DECLARATIONS
   ],
   /**
@@ -76,12 +76,13 @@ if (process.env.BASE_URL) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (http: Http) => new TranslateStaticLoader(http, appBaseUrl + '/assets/i18n', '.json'),
       deps: [Http]
-    })
+    }),
+    AppCommonModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

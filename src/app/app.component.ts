@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 import { TranslateService } from 'ng2-translate';
-import { AppTranslateService } from "./app.common/services/translation.service";
+import {AppTranslateService} from "./module.common/services/translation.service";
 /*
  * App Component
  * Top Level Component

@@ -1,4 +1,4 @@
-NOTE!: This is work in progress, not ready for usage yet!
+NOTE!: This is work in progress!
 
 # a4-modular-boilerplate
 Boilerplate based on @Angularclass webpack starter modified to allow develop all-in-one a set of applications with common 
@@ -56,8 +56,6 @@ considered modularization into separate npm packages not applicable in this case
 * by design the repository will grow, not an issue in the use case targeted by this design
 * TREE SHAKING - issue number one to solve - for the production deploy I want to reduce the unreachable code of 
 other applications budnled in the package
-
+on
 # Thanks 
-First of all thanks to @AngularClass for their amazing work and original boilerplate.
-Second almost all the code was authored by me, but not all, so I would like to thank to @fojt for his contribution to 
-the loader and user messages and all the discussion we have made regarding Angular troughout the years.
+I would like to thank to @fojt for his contribution to the loader and user messages and all the discussion we have made regarding Angular troughout the years.

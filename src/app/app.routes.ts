@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 //module routes
 import { A_ROUTES } from "./settings.routes/a.routes"
 import { B_ROUTES } from "./settings.routes/b.routes"
-import { NoContentComponent } from "./app.common/components/no.content/common.no-content.component";
 import {DEV_ROUTES} from "./settings.routes/dev.routes";
+import {NoContentComponent} from "./module.common/components/no.content/common.no-content.component";
 
 export const ROUTES: Routes = generatePaths();
 

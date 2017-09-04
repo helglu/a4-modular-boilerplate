@@ -9,7 +9,6 @@ import {
 
 import {A_PROVIDERS} from './settings.providers/a.providers'
 import {B_PROVIDERS} from './settings.providers/b.providers'
-import {COMMON_PROVIDERS} from './settings.providers/common.providers'
 
 
 /**
@@ -44,7 +43,7 @@ if ('production-a' === ENV) { //TODO finish
   PROVIDERS = [
     ...PROVIDERS,
     ...A_PROVIDERS,
-    ...COMMON_PROVIDERS
+    // ...COMMON_PROVIDERS
     // custom providers in production
   ];
 
@@ -63,7 +62,7 @@ if ('production-a' === ENV) { //TODO finish
   PROVIDERS = [
     ...PROVIDERS,
     ...B_PROVIDERS,
-    ...COMMON_PROVIDERS
+    // ...COMMON_PROVIDERS
     // custom providers in production
   ];
 
@@ -85,7 +84,7 @@ if ('production-a' === ENV) { //TODO finish
     ...PROVIDERS,
     ...A_PROVIDERS,
     ...B_PROVIDERS,
-    ...COMMON_PROVIDERS
+    // ...COMMON_PROVIDERS
     // custom providers in development
   ];
 

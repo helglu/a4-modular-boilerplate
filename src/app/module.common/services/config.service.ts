@@ -10,13 +10,12 @@ if (process.env.ENV) {
     var appAConfig = require('../../app.a/configuration/a.config.json');
   }
   if (env === 'production-b') {
-    var appAConfig = require('../../app.b/configuration/b.config.json');
+    var appBConfig = require('../../app.b/configuration/b.config.json');
   } else if (env == 'development') {
     var appAConfig = require('../../app.a/configuration/a.config.json');
     var appBConfig = require('../../app.b/configuration/b.config.json');
   }
-
-  var commonConfig = require('../../app.common/configuration/common.config.json');
+  var commonConfig = require('../configuration/common.config.json');
 
 } else {
   console.log('FATAL ERROR - cannot find build mode!!');

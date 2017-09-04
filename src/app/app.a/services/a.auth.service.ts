@@ -1,7 +1,7 @@
 import {CanActivate, Router}    from '@angular/router';
 import {Injectable} from "@angular/core";
-import {MessagesService} from "../../app.common/components/messages/messages.service";
-import {CommonConfigService} from "../../app.common/services/config.service";
+import {MessagesService} from "../../module.common/components/messages/messages.service";
+import {CommonConfigService} from "../../module.common/services/config.service";
 
 var _ = require("lodash");
 
@@ -19,6 +19,7 @@ export class AAuthService implements CanActivate {
               private messagesService:MessagesService,
               private configService: CommonConfigService) {
     console.log("app A auth service initialised")
+    console.log(window.location.host)
   }
 
   public logIn(loginForm:any) {
@@ -33,7 +34,7 @@ export class AAuthService implements CanActivate {
         console.log('navigating for oringinal url')
         this.router.navigate([this.initUnauthUrl]);
       } else {
-        this.router.navigate(['/a-home']);
+        this.router.navigate(['a-home']);
 
       }
 
@@ -59,11 +60,11 @@ export class AAuthService implements CanActivate {
       this.isLoggedIn = true;
       this.userId = userId;
 
-    } 
+    }
 
     if (!this.isLoggedIn) {
-      this.initUnauthUrl = window.location.href.toString().split(window.location.host)[1];
-      this.router.navigate(['/a-login']);
+      this.initUnauthUrl = window.location.href.toString().split('#/')[1];
+      this.router.navigate(['a-login']);
     }
     console.log("AAuthService: canActivate performed");
     return this.isLoggedIn;
@@ -77,7 +78,7 @@ export class AAuthService implements CanActivate {
      }
     this.userId = undefined;
     this.isLoggedIn = false;
-    this.router.navigate(['/a-login']);
+    this.router.navigate(['a-login']);
   }
 
 

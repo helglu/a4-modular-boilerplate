@@ -9,6 +9,7 @@ export class AppTranslateService {
 
   constructor(public translateService: TranslateService,
               private http: Http) {
+    console.log('translate service initialised');
     translateService.setDefaultLang('cn');
     translateService.use('cn');
   }
