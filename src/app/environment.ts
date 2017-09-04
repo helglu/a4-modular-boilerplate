@@ -43,7 +43,6 @@ if ('production-a' === ENV) { //TODO finish
   PROVIDERS = [
     ...PROVIDERS,
     ...A_PROVIDERS,
-    // ...COMMON_PROVIDERS
     // custom providers in production
   ];
 
@@ -62,7 +61,6 @@ if ('production-a' === ENV) { //TODO finish
   PROVIDERS = [
     ...PROVIDERS,
     ...B_PROVIDERS,
-    // ...COMMON_PROVIDERS
     // custom providers in production
   ];
 
@@ -84,7 +82,6 @@ if ('production-a' === ENV) { //TODO finish
     ...PROVIDERS,
     ...A_PROVIDERS,
     ...B_PROVIDERS,
-    // ...COMMON_PROVIDERS
     // custom providers in development
   ];
 

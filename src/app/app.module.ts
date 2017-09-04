@@ -66,7 +66,6 @@ if (process.env.BASE_URL) {
     AppComponent,
     ...B_DECLARATIONS,
     ...A_DECLARATIONS,
-    // ...COMMON_DECLARATIONS,
     ...DEV_DECLARATIONS
   ],
   /**
