@@ -63,7 +63,7 @@ export class BAuthService implements CanActivate {
     }
 
     if (!this.isLoggedIn) {
-      this.initUnauthUrl = window.location.href.toString().split(window.location.host)[1];
+      this.initUnauthUrl = window.location.href.toString().split('#/')[1];
       this.router.navigate(['b-login']);
     }
     console.log("BAuthService: canActivate performed");

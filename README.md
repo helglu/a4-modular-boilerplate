@@ -35,7 +35,7 @@ configuration and components, reuse whatever you want from common and the applic
 # Common functionality already implemented in this boilerplate
 * REST client with interceptor
 * User messaging
-* Loader indicator
+* Loader(activity) indicator
 * Configuration service
 * Modal window
 * i18 localization
@@ -43,9 +43,9 @@ configuration and components, reuse whatever you want from common and the applic
 # Motivation
 I come up with this idea when I was developing for a startup company, that used Java BPMN framework 
 at the backend and ready made Angular 2 application on the front end. Within one year there was 
-established 6 similar front end applications and it was not a final number. All the applications were not only similar 
-regarding backend communication and data structures but also regarding design because they were all intended for operators 
-and therefore maintained same look and feel. 
+established few similar front end applications and it was not a final number. All the applications were not only similar 
+regarding backend communication and data structures but also regarding design because the requirements was to maintain 
+same look and feel. They share approximately 70% of the code.
 
 My idea was to come up with a structure that provide possibility to derive new application very fast with maximum 
 reusability and minimum maintenance demand. Communication between teams was quite difficult and not well organized so I 
@@ -53,9 +53,7 @@ considered modularization into separate npm packages not applicable in this case
  
 
 # Issues I am aware of and issues not solved yet
-* by design the repository will grow, not an issue in the use case targeted by this design
-* TREE SHAKING - issue number one to solve - for the production deploy I want to reduce the unreachable code of 
-other applications budnled in the package
-on
+* TREE SHAKING - I would like to experiment with conditional imports to reduce unused code bundled in the production build
+
 # Thanks 
-I would like to thank to @fojt for his contribution to the loader and user messages and all the discussion we have made regarding Angular troughout the years.
+I would like to thank to @fojt for his contributions and discussions.
