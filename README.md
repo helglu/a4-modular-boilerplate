@@ -48,7 +48,7 @@ regarding backend communication and data structures but also regarding design be
 same look and feel. They share approximately 70% of the code.
 
 My idea was to come up with a structure that provide possibility to derive new application very fast with maximum 
-reusability and minimum maintenance demand. Communication between teams was quite difficult and not well organized so I 
+reusability and minimum maintenance demand. I
 considered modularization into separate npm packages not applicable in this case. 
  
 
